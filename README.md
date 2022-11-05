@@ -161,7 +161,51 @@ namespace ConsoleApp7
             //    }
             //    if (czypierwsza) Console.Write("liczba " +  liczba  +" jest liczbą pierwszą ");
             //}    
+            using System;
 
+////////////namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int n = 0;
+            while(true)
+                {
+                Console.WriteLine("Podaj liczbę n: ");
+                try
+                {
+                    n = int.Parse(Console.ReadLine());
+                    break;
+                }
+                catch (FormatException formatException)
+                {
+                    Console.WriteLine(formatException.Message);
+                }
+                catch (OverflowException overflowException)
+                {
+                    Console.WriteLine(overflowException.Message);
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Jakiś inny wyjątek");
+                }
+                Console.WriteLine("Podaj liczbe m: ");
+                int m = int.Parse(Console.ReadLine());
+            }
+
+            int suma = 0;
+            for (int i = n; i <= m; i++)
+            {
+                suma += (int)Math.Pow(i, 3);
+
+            }
+            Console.WriteLine("Suma wynosi " + suma);
+        }
+    }
+}
+///////////////////
         }
         }
    }
